@@ -9,8 +9,8 @@
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=hello_remote_world",
-                    "--package=hello_remote_world",
+                    "--bin=real_world_http",
+                    "--package=real_world_http",
                     "--manifest-path=Cargo.toml"
                 ],
                 "filter": {

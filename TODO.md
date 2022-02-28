@@ -1,1 +1,0 @@
-- Replace `hello_remote_world` to `project_name`.

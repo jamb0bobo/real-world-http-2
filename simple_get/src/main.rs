@@ -1,9 +1,16 @@
-// use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Serialize};
 use serde_json::{Value};
 
 #[async_std::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let mut res = surf::get("https://httpbin.org/get").await?;
+    #[derive(Serialize, Deserialize)]
+    struct Query {
+        query: String
+    }
+
+    let query = Query { query: String::from("hello world") };
+
+    let mut res = surf::get("https://httpbin.org/get").query(&query)?.await?;
     let body = res.body_string().await?;
     dbg!(&body);
     let v: Value = serde_json::from_str(&body)?;

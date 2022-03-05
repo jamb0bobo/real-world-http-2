@@ -8,4 +8,4 @@ path = "./src/lib/lib.rs"
 
 [workspace]
 
-members = ["simple_get"]
+members = ["simple_get", "simple_head"]
